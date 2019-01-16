@@ -8,21 +8,21 @@ namespace HighPerformanceDataExtraction.Data
 {
     public class GLHistory
     {
-        //<d:FinPeriodID>012013</d:FinPeriodID>
-        //<d:LedgerID m:type="Edm.Int32">16</d:LedgerID>
-        //<d:BranchID m:type="Edm.Int32">16</d:BranchID>
-        //<d:AccountID m:type="Edm.Int32">1149</d:AccountID>
-        //<d:SubaccountID m:type="Edm.Int32">467</d:SubaccountID>
-        //<d:FinYear>2013</d:FinYear>
-        //<d:CuryFinBegBalance m:type="Edm.Decimal">0.0000</d:CuryFinBegBalance>
-        //<d:CuryFinPtdCredit m:type="Edm.Decimal">0.0000</d:CuryFinPtdCredit>
-        //<d:CuryFinPtdDebit m:type="Edm.Decimal">2000.0000</d:CuryFinPtdDebit>
-        //<d:CuryFinYtdBalance m:type="Edm.Decimal">2000.0000</d:CuryFinYtdBalance>
-        //<d:CuryID>USD</d:CuryID>
-        //<d:FinBegBalance m:type="Edm.Decimal">0.0000</d:FinBegBalance>
-        //<d:FinPtdCredit m:type="Edm.Decimal">0.0000</d:FinPtdCredit>
-        //<d:FinPtdDebit m:type="Edm.Decimal">2000.0000</d:FinPtdDebit>
-        //<d:FinYtdBalance m:type="Edm.Decimal">2000.0000</d:FinYtdBalance>
-        //<d:Timestamp m:type="Edm.Binary">AAAAAAAGWJY=</d:Timestamp>
+        public string FinPeriodID { get; set; }
+        public int LedgerID { get; set; }
+        public int BranchID { get; set; }
+        public int AccountID { get; set; }
+        public int SubaccountID { get; set; }
+        public int FinYear { get; set; }
+        public decimal CuryFinBegBalance { get; set; }
+        public decimal CuryFinPtdCredit { get; set; }
+        public decimal CuryFinPtdDebit { get; set; }
+        public decimal CuryFinYtdBalance { get; set; }
+        public string CuryID { get; set; }
+        public decimal FinBegBalance { get; set; }
+        public decimal FinPtdCredit { get; set; }
+        public decimal FinPtdDebit { get; set; }
+        public decimal FinYtdBalance { get; set; }
+        public string Timestamp { get; set; }
     }
 }

@@ -13,7 +13,6 @@ namespace HighPerformanceDataExtraction
         {
             var connection = new AcumaticaConnection("http://localhost/AcumaticaDemo2018R2/OData/", "admin", "admin");
 
-            /*
             //Simple, non-streaming OData load
             Console.WriteLine("Testing simple non-streaming provider...");
             IODataProvider provider = new AcumaticaSimpleODataProvider(connection);
@@ -25,11 +24,10 @@ namespace HighPerformanceDataExtraction
             provider = new AcumaticaStreamingODataProvider(connection);
             TestLoad<Data.InvoicedItem>(provider, "InvoicedItems");
             Console.WriteLine();
-            */
 
             //Load accounts modified since... (LastModifiedDateTime)
             Console.WriteLine("Load accounts modified since (with LastModifiedDateTime)...");
-            var provider = new AcumaticaStreamingODataProvider(connection);
+            provider = new AcumaticaStreamingODataProvider(connection);
             DateTime lastModifiedDateTime = new DateTime(2019, 01, 15, 8, 30, 0);
             var filter = $"LastModifiedDateTime gt datetime'{lastModifiedDateTime:yyyy-MM-ddTHH:mm:ss.fff}'";
             TestLoad<Data.Account>(provider, "VelixoReportsPro-Accounts", filter);
@@ -38,7 +36,7 @@ namespace HighPerformanceDataExtraction
             //Load GL entries modified since... (tstamp)
             Console.WriteLine("Load GL entries modified since (with tstamp)...");
             provider = new AcumaticaStreamingODataProvider(connection);
-            string lastTimestamp = Base64TimestampToODataBinaryLiteral("AAAAAAAAAAw=");
+            string lastTimestamp = Base64TimestampToODataBinaryLiteral("AAAAAAALWJY=");
             filter = $"Timestamp gt binary'{lastTimestamp}'";
             TestLoad<Data.GLHistory>(provider, "VelixoReportsPro-GLHistory", filter);
             Console.WriteLine();
