@@ -29,7 +29,7 @@ namespace Velixo.Summit2019Samples
             int? inventoryID = (int?)sender.GetValue(e.Row, _inventoryIDField.Name);
             if (inventoryID != null)
             {
-                //Bad!!!
+                //Bad -- we run a SQL select for every item!!!
                 var categoryList = PXSelectJoin<INCategory, 
                     InnerJoin<INItemCategory, On<INCategory.categoryID, Equal<INItemCategory.categoryID>>>,
                     Where<INItemCategory.inventoryID, Equal<Required<INItemCategory.inventoryID>>>>.Select(sender.Graph, inventoryID);
